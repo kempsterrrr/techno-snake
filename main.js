@@ -4,20 +4,20 @@
 // Randomly select and dynamically update audio source - EXTRA CODE Secttion added too Kushagra's orginal game
 
 var foodMusicArr = [
-	"http://www.77signal.co.uk/snake/audio/bubblers.mp3",
-	"http://www.77signal.co.uk/snake/audio/alrighty.mp3",
-	"http://www.77signal.co.uk/snake/audio/stinky.mp3",
-	"http://www.77signal.co.uk/snake/audio/big.mp3",
-	"http://www.77signal.co.uk/snake/audio/holdtight.mp3",
-	"http://www.77signal.co.uk/snake/audio/listen.mp3",
-	"http://www.77signal.co.uk/snake/audio/mydj.mp3",
-	"http://www.77signal.co.uk/snake/audio/selecta.mp3",
-	"http://www.77signal.co.uk/snake/audio/door.mp3",
-	"http://www.77signal.co.uk/snake/audio/session.mp3",
-	"http://www.77signal.co.uk/snake/audio/thisone.mp3"
+	"./audio/food/alrighty.mp3",
+	"./audio/food/big.mp3",
+	"./audio/food/bubblers.mp3",
+	"./audio/food/door.mp3",
+	"./audio/food/holdtight.mp3",
+	"./audio/food/listen.mp3",
+	"./audio/food/mydj.mp3",
+	"./audio/food/selecta.mp3",
+	"./audio/food/session.mp3",
+	"./audio/food/stinky.mp3",
+	"./audio/food/thisone.mp3"
 ];
 
-var currentFoodMusic = "";
+var currentFoodMusic = "./audio/food/thisone.mp3";
 
 function randomiseAudio () {
 	currentFoodMusic = foodMusicArr[Math.floor(Math.random() * foodMusicArr.length)];
@@ -34,6 +34,8 @@ updateSource();
 
 //Preloading audio stuff
 
+console.log(currentFoodMusic, 'current foodm usic')
+
 var mainMusic = document.getElementById("main_music"),
 	foodMusic = document.getElementById("food"),
 	goMusic = document.getElementById("gameOver");
@@ -46,7 +48,9 @@ var start = document.getElementById("start"),
 
 for(var i = 0; i < files.length; i++) {
 	var file = files[i];
+	console.log(file, i)
 	file.addEventListener("loadeddata", function() {
+		console.log('file loaded', file)
 		counter++;
 		var percent = Math.floor((counter/files.length)*100);
 		loading.innerHTML = "Loading " + percent + "%";
