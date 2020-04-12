@@ -92,15 +92,10 @@ function init() {
 	var msgsSelf = [];
 	msgsSelf[0] = "Deadout";
 	msgsSelf[1] = "Check yourself";
-	// msgsSelf[2] = "AArrgghhh!! I bit myself!!";
-	// msgsSelf[3] = "Do you have Autophagia?";
 
 	var msgsWall = [];
 	msgsWall[0] = "Murked";
 	msgsWall[1] = "Devastating";
-	// msgsWall[2] = "There's no way to escape the game...";
-	// msgsWall[3] = "LOOK MA! NO HEAD..!!";
-	// msgsWall[4] = "Can't see the wall? Huh?";
 
 	function paintCanvas() {
 		ctx.fillStyle = "black";
